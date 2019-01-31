@@ -119,7 +119,12 @@ namespace ConsoleApp2
             }
             if (board[0] == board[4] && board[4] == board[8] && board[0] != " ") return true;
             if (board[2] == board[4] && board[4] == board[6] && board[2] != " ") return true;
-            return false;
+            Boolean finished = true;
+            foreach (string cell in board)
+            {
+                if (cell == " ") finished = false;
+            }
+            return finished;
         }
         
         private static void Turn(int player, List<string> board)
